@@ -1,7 +1,14 @@
+@use "./mixins" as mixin;
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1400px;
-  padding: 20px 20px 0;
+  padding: calc(100vh / 5) 20px 20px;
+  min-height: 100vh;
+  min-width: 100%;
+
+  @include mixin.lg {
+    padding-top: calc(100vh / 7);
+  }
 }
 /*=============== ANIMATIONS ===============*/
 @keyframes pulse {

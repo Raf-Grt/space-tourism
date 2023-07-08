@@ -1,10 +1,16 @@
 @import "../../assets/styles/mixins";
 
 .technology {
-  padding-top: calc(100vh / 5);
-  margin-inline: auto;
-  @include lg {
-    padding-top: calc(100vh / 7);
+  &-background {
+    background: url("../../assets/technology/background-technology-desktop.jpg");
+
+    @include lg {
+      background: url("../../assets/technology/background-technology-tablet.jpg");
+    }
+
+    @include xs {
+      background: url("../../assets/technology/background-technology-mobile.jpg");
+    }
   }
 
   &-heading {
@@ -101,20 +107,6 @@
       @include lg {
         display: none;
       }
-    }
-  }
-
-  &-background {
-    @include page-background(
-      "../../assets/technology/background-technology-desktop.jpg"
-    );
-
-    @include lg {
-      background: url("../../assets/technology/background-technology-tablet.jpg");
-    }
-
-    @include xs {
-      background: url("../../assets/technology/background-technology-mobile.jpg");
     }
   }
 }

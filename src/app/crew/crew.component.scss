@@ -1,10 +1,16 @@
 @import "../../assets/styles/mixins";
 
 .crew {
-  padding-top: calc(100vh / 5);
-  margin-inline: auto;
-  @include lg {
-    padding-top: calc(100vh / 7);
+  &-background {
+    background: url("../../assets/crew/background-crew-desktop.jpg");
+
+    @include lg {
+      background: url("../../assets/crew/background-crew-tablet.jpg");
+    }
+
+    @include xs {
+      background: url("../../assets/crew/background-crew-mobile.jpg");
+    }
   }
 
   &-heading {
@@ -112,18 +118,6 @@
           background-color: rgba(255, 255, 255, 1);
         }
       }
-    }
-  }
-
-  &-background {
-    @include page-background("../../assets/crew/background-crew-desktop.jpg");
-
-    @include lg {
-      background: url("../../assets/crew/background-crew-tablet.jpg");
-    }
-
-    @include xs {
-      background: url("../../assets/crew/background-crew-mobile.jpg");
     }
   }
 }

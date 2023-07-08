@@ -1,10 +1,16 @@
 @import "../../assets/styles/mixins";
 
 .destination {
-  padding-top: calc(100vh / 5);
-  margin-inline: auto;
-  @include lg {
-    padding-top: calc(100vh / 7);
+  &-background {
+    background: url("../../assets/destination/background-destination-desktop.jpg");
+
+    @include lg {
+      background: url("../../assets/destination/background-destination-tablet.jpg");
+    }
+
+    @include xs {
+      background: url("../../assets/destination/background-destination-mobile.jpg");
+    }
   }
 
   &-heading {
@@ -103,20 +109,6 @@
         color: var(--text-dark);
         margin-bottom: 12px;
       }
-    }
-  }
-
-  &-background {
-    @include page-background(
-      "../../assets/destination/background-destination-desktop.jpg"
-    );
-
-    @include lg {
-      background: url("../../assets/destination/background-destination-tablet.jpg");
-    }
-
-    @include xs {
-      background: url("../../assets/destination/background-destination-mobile.jpg");
     }
   }
 }
