@@ -1,4 +1,10 @@
-# SpaceApp
+# Frontend Mentor - Space tourism website
+
+![Design preview for the Space tourism website coding challenge](./preview.jpg)
+
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3).
+
+## Space-Tourism
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 
@@ -10,6 +16,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Further help
+## The challenge
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Users should be able to:
+
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
