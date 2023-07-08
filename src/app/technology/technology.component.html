@@ -1,0 +1,50 @@
+<section class="technology container">
+  <h3 class="technology-heading heading5"><span>03</span> SPACE LAUNCH 101</h3>
+  <div class="technology-wrapper">
+    <div class="technology-buttons">
+      <button
+        class="btn"
+        (click)="changeTechnology(techList[0])"
+        [ngClass]="selectedTechnology?.name === techList[0] ? 'active' : ''"
+      >
+        1
+      </button>
+      <button
+        class="btn"
+        (click)="changeTechnology(techList[1])"
+        [ngClass]="selectedTechnology?.name === techList[1] ? 'active' : ''"
+      >
+        2
+      </button>
+      <button
+        class="btn"
+        (click)="changeTechnology(techList[2])"
+        [ngClass]="selectedTechnology?.name === techList[2] ? 'active' : ''"
+      >
+        3
+      </button>
+    </div>
+    <div class="technology-content">
+      <h4 class="technology-content_heading nav-text">THE TERMINOLOGY…</h4>
+      <h2 class="technology-content_name heading3">
+        {{ selectedTechnology?.name | uppercase }}
+      </h2>
+      <div class="technology-content_description description">
+        {{ selectedTechnology?.description }}
+      </div>
+    </div>
+    <div class="technology-img">
+      <img
+        [src]="selectedTechnology?.images?.portrait"
+        [alt]="selectedTechnology?.name"
+        class="technology-img_desktop"
+      />
+      <img
+        [src]="selectedTechnology?.images?.landscape"
+        [alt]="selectedTechnology?.name"
+        class="technology-img_mobile"
+      />
+    </div>
+  </div>
+</section>
+<div class="technology-background"></div>

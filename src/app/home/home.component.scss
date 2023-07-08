@@ -1,0 +1,76 @@
+@import "../../assets/styles/mixins";
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: calc(100vh / 2.2);
+  margin-inline: auto;
+
+  @include lg {
+    padding-top: calc(100vh / 4);
+    flex-direction: column;
+  }
+
+  &-content {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &_title {
+      margin-block: 24px;
+    }
+
+    &_text {
+      max-width: 450px;
+      text-align: center;
+    }
+    width: 100%;
+  }
+
+  &-action {
+    flex-basis: 50%;
+    display: grid;
+    place-items: center right;
+
+    @include lg {
+      place-items: center;
+    }
+
+    &_btn {
+      height: 274px;
+      width: 274px;
+      border-radius: 50%;
+
+      @include lg {
+        height: 242px;
+        width: 242px;
+        margin-top: 80px;
+      }
+
+      @include lg {
+        height: 150px;
+        width: 150px;
+        margin-top: 60px;
+      }
+
+      &:hover {
+        animation: pulse 2s infinite;
+      }
+    }
+  }
+
+  &-background {
+    @include page-background("../../assets/home/background-home-desktop.jpg");
+
+    @include lg {
+      background: url("../../assets/home/background-home-tablet.jpg");
+    }
+
+    @include xs {
+      background: url("../../assets/home/background-home-mobile.jpg");
+    }
+  }
+}

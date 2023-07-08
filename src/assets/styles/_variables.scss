@@ -1,0 +1,20 @@
+:root {
+  /*========== colors ==========*/
+  --primary: #0b0d17;
+  --text-light: #ffffff;
+  --text-dark: #d0d6f9;
+
+  /*========== Font and typography ==========*/
+  --heading-font: "Bellefair", serif;
+  --body-font: "Barlow Condensed", sans-serif;
+
+  --heading1-font-size: clamp(5rem, 18vw, 9.375rem);
+  --heading2-font-size: clamp(3.5rem, 10vw, 6.25rem);
+  --heading3-font-size: clamp(1.5rem, 5.6vw, 3.5rem);
+  --heading4-font-size: clamp(1rem, 3.2vw, 2rem);
+  --heading5-font-size: clamp(1rem, 2.8vw, 1.75rem);
+  --subheading1-font-size: 1.75rem;
+  --subheading2-font-size: 0.875rem;
+  --nav-font-size: clamp(0.875rem, 1.6vw, 1rem);
+  --body-font-size: clamp(0.93rem, 1.8vw, 1.125rem);
+}

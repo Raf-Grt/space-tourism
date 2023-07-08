@@ -1,0 +1,124 @@
+@import "../../assets/styles/mixins";
+
+.header {
+  position: absolute;
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+
+  &-logo {
+    width: 48px;
+    margin-left: 55px;
+
+    @include lg {
+      margin: 0 20px 0 30px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-separator {
+    &_line {
+      position: absolute;
+      max-width: 30vw;
+      width: 100%;
+      height: 1px;
+      background-color: var(--text-dark);
+      opacity: 0.25;
+      transform: translateX(-40%);
+      z-index: 2;
+      @include xl {
+        display: none;
+      }
+    }
+  }
+
+  &-menu {
+    max-width: clamp(450px, 60vw, 830px);
+    width: 100%;
+    height: 96px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40px);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+
+    @include sm {
+      display: none;
+    }
+
+    &.show-mobile {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-top: 120px;
+      height: 100vh;
+      transform-origin: top right;
+      top: 0;
+      right: 0;
+      max-width: 80vw;
+      z-index: 99;
+
+      span {
+        display: block;
+      }
+
+      & > .header-menu_item {
+        padding: 20px 0;
+        margin-left: 15%;
+
+        &.active {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &_item {
+      display: flex;
+      flex-flow: row nowrap;
+      padding: 38px 0;
+      cursor: pointer;
+
+      span {
+        font-weight: 700;
+        margin-right: 10px;
+
+        @include lg {
+          display: none;
+        }
+      }
+
+      &:hover {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+      }
+
+      &.active {
+        border-bottom: 3px solid #fff;
+      }
+    }
+
+    &_mobile {
+      width: 24px;
+      position: absolute;
+      transform-origin: top right;
+      top: 30px;
+      right: 20px;
+      z-index: 999;
+      cursor: pointer;
+      display: none;
+
+      @include sm {
+        display: flex;
+      }
+    }
+  }
+}

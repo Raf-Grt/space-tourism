@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="header-logo">
+    <img src="../../assets/shared/logo.svg" alt="Logo" />
+  </div>
+
+  <div class="header-separator">
+    <div class="header-separator_line"></div>
+  </div>
+
+  <ul class="header-menu nav-text" [ngClass]="showMobile ? 'show-mobile' : ''">
+    <li
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-menu_item"
+    >
+      <span>00</span> HOME
+    </li>
+    <li
+      routerLink="/destination"
+      routerLinkActive="active"
+      class="header-menu_item"
+    >
+      <span>01</span> DESTINATION
+    </li>
+    <li routerLink="/crew" routerLinkActive="active" class="header-menu_item">
+      <span>02</span> CREW
+    </li>
+    <li
+      routerLink="/technology"
+      routerLinkActive="active"
+      class="header-menu_item"
+    >
+      <span>03</span> TECHNOLOGY
+    </li>
+  </ul>
+  <div class="header-menu_mobile" [ngClass]="!showMobile ? 'show-mobile' : ''">
+    <img [src]="menuLogo" alt="menu" (click)="toggleMenu()" />
+  </div>
+</header>

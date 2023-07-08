@@ -1,0 +1,122 @@
+@import "../../assets/styles/mixins";
+
+.destination {
+  padding-top: calc(100vh / 5);
+  margin-inline: auto;
+  @include lg {
+    padding-top: calc(100vh / 7);
+  }
+
+  &-heading {
+    color: var(--text-light);
+    text-transform: uppercase;
+
+    span {
+      font-weight: bold;
+      opacity: 0.25;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto 0;
+    max-width: 85vw;
+
+    @include lg {
+      flex-direction: column;
+    }
+  }
+
+  &-img {
+    flex-basis: 60%;
+    display: grid;
+    place-items: left;
+    padding-right: 20px;
+
+    @include lg {
+      max-width: 50vw;
+      padding: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  &-content {
+    flex-basis: 40%;
+
+    @include lg {
+      text-align: center;
+    }
+
+    &_menu {
+      display: flex;
+      flex-flow: row nowrap;
+
+      @include lg {
+        justify-content: center;
+      }
+
+      &-item {
+        margin-right: 35px;
+        color: var(--text-dark);
+        padding: 12px 0;
+        cursor: pointer;
+
+        &:hover {
+          border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &.active {
+          color: var(--text-light);
+          border-bottom: 3px solid #fff;
+        }
+      }
+    }
+
+    &_heading {
+      margin: 40px 0 15px;
+    }
+
+    &_separator {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      margin: 50px auto 30px;
+    }
+
+    &_infos {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 10%;
+
+      @include lg {
+        justify-content: center;
+      }
+
+      @include sm {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .subheading2 {
+        color: var(--text-dark);
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &-background {
+    @include page-background(
+      "../../assets/destination/background-destination-desktop.jpg"
+    );
+
+    @include lg {
+      background: url("../../assets/destination/background-destination-tablet.jpg");
+    }
+
+    @include xs {
+      background: url("../../assets/destination/background-destination-mobile.jpg");
+    }
+  }
+}

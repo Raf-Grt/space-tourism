@@ -1,0 +1,120 @@
+@import "../../assets/styles/mixins";
+
+.technology {
+  padding-top: calc(100vh / 5);
+  margin-inline: auto;
+  @include lg {
+    padding-top: calc(100vh / 7);
+  }
+
+  &-heading {
+    color: var(--text-light);
+    text-transform: uppercase;
+
+    span {
+      font-weight: bold;
+      opacity: 0.25;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+    gap: 50px;
+
+    @include lg {
+      flex-direction: column;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @include lg {
+      order: 2;
+      width: 100%;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .btn {
+      height: clamp(60px, 8vw, 88px);
+      width: clamp(60px, 8vw, 88px);
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid rgba($color: #fff, $alpha: 0.25);
+      color: var(--text-light);
+      color: #fff;
+      text-align: center;
+      font-size: clamp(24px, 3.2vw, 32px);
+      font-family: var(--heading-font);
+      margin-block: 16px;
+
+      &:hover {
+        border-color: #fff;
+      }
+
+      &.active {
+        background-color: #fff;
+        color: var(--primary);
+      }
+    }
+  }
+
+  &-content {
+    max-width: 470px;
+    width: 100%;
+
+    @include lg {
+      order: 3;
+      text-align: center;
+    }
+
+    &_name {
+      margin: 11px 0 17px;
+    }
+  }
+
+  &-img {
+    @include lg {
+      order: 1;
+      width: 100vw;
+      margin-top: 60px;
+    }
+
+    &_mobile {
+      display: none;
+
+      @include lg {
+        display: flex;
+      }
+    }
+
+    &_desktop {
+      @include lg {
+        display: none;
+      }
+    }
+  }
+
+  &-background {
+    @include page-background(
+      "../../assets/technology/background-technology-desktop.jpg"
+    );
+
+    @include lg {
+      background: url("../../assets/technology/background-technology-tablet.jpg");
+    }
+
+    @include xs {
+      background: url("../../assets/technology/background-technology-mobile.jpg");
+    }
+  }
+}

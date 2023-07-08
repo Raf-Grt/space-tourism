@@ -1,0 +1,65 @@
+<div class="destination-background"></div>
+<section class="destination container">
+  <h3 class="destination-heading heading5">
+    <span>01</span> Pick your destination
+  </h3>
+  <div class="destination-wrapper">
+    <div class="destination-img">
+      <img [src]="destination?.images?.png" [alt]="destination?.name" />
+    </div>
+    <div class="destination-content">
+      <ul class="destination-content_menu nav-text">
+        <li
+          class="destination-content_menu-item"
+          (click)="changeDestination('Moon')"
+          [ngClass]="{ active: selectedDestination === 'Moon' }"
+        >
+          MOON
+        </li>
+        <li
+          class="destination-content_menu-item"
+          (click)="changeDestination('Mars')"
+          [ngClass]="{ active: selectedDestination === 'Mars' }"
+        >
+          MARS
+        </li>
+        <li
+          class="destination-content_menu-item"
+          (click)="changeDestination('Europa')"
+          [ngClass]="{ active: selectedDestination === 'Europa' }"
+        >
+          EUROPA
+        </li>
+        <li
+          class="destination-content_menu-item"
+          (click)="changeDestination('Titan')"
+          [ngClass]="{ active: selectedDestination === 'Titan' }"
+        >
+          TITAN
+        </li>
+      </ul>
+      <h2 class="destination-content_heading heading2">
+        {{ destination?.name | uppercase }}
+      </h2>
+      <p class="destination-content_description description">
+        {{ destination?.description }}
+      </p>
+      <hr class="destination-content_separator" />
+      <div class="destination-content_infos">
+        <div class="destination-content_infos-detail">
+          <p class="subheading2">AVG. DISTANCE</p>
+          <p class="subheading1">
+            {{ destination?.distance | uppercase }}
+          </p>
+        </div>
+
+        <div class="destination-content_infos-detail">
+          <p class="subheading2">Est. travel time</p>
+          <p class="subheading1">
+            {{ destination?.travel | uppercase }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

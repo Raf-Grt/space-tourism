@@ -1,0 +1,129 @@
+@import "../../assets/styles/mixins";
+
+.crew {
+  padding-top: calc(100vh / 5);
+  margin-inline: auto;
+  @include lg {
+    padding-top: calc(100vh / 7);
+  }
+
+  &-heading {
+    color: var(--text-light);
+    text-transform: uppercase;
+
+    span {
+      font-weight: bold;
+      opacity: 0.25;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 55px;
+
+    @include lg {
+      flex-direction: column;
+    }
+  }
+
+  &-img {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    max-height: 560px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    @include lg {
+      max-width: 50vw;
+      padding: 0;
+    }
+
+    @include sm {
+      order: 1;
+      margin-bottom: 40px;
+    }
+
+    img {
+      max-width: 90%;
+
+      @include lg {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-content {
+    flex-basis: 50%;
+
+    @include lg {
+      text-align: center;
+    }
+
+    @include sm {
+      order: 2;
+    }
+
+    &_role {
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    &_name {
+      margin: 15px 0 30px;
+    }
+
+    &_description {
+      max-width: 450px;
+      width: 100%;
+      margin-bottom: 120px;
+
+      @include lg {
+        margin-bottom: 40px;
+      }
+    }
+
+    &_nav {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      @include lg {
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+
+      &-item {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.25);
+        margin-right: 15px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        &.active {
+          background-color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+
+  &-background {
+    @include page-background("../../assets/crew/background-crew-desktop.jpg");
+
+    @include lg {
+      background: url("../../assets/crew/background-crew-tablet.jpg");
+    }
+
+    @include xs {
+      background: url("../../assets/crew/background-crew-mobile.jpg");
+    }
+  }
+}

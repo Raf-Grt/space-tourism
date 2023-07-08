@@ -1,0 +1,40 @@
+<section class="crew container">
+  <h3 class="crew-heading heading5"><span>02</span> Meet your crew</h3>
+  <div class="crew-wrapper">
+    <div class="crew-content">
+      <h3 class="crew-content_role heading4">{{ crewmate?.role }}</h3>
+      <h2 class="crew-content_name heading3">
+        {{ crewmate?.name | uppercase }}
+      </h2>
+      <p class="crew-content_description description">
+        {{ crewmate?.bio }}
+      </p>
+      <ul class="crew-content_nav">
+        <li
+          class="crew-content_nav-item"
+          (click)="changeCrewmate(crewList[0])"
+          [ngClass]="{ active: selectedCrewmate === crewList[0] }"
+        ></li>
+        <li
+          class="crew-content_nav-item"
+          (click)="changeCrewmate(crewList[1])"
+          [ngClass]="{ active: selectedCrewmate === crewList[1] }"
+        ></li>
+        <li
+          class="crew-content_nav-item"
+          (click)="changeCrewmate(crewList[2])"
+          [ngClass]="{ active: selectedCrewmate === crewList[2] }"
+        ></li>
+        <li
+          class="crew-content_nav-item"
+          (click)="changeCrewmate(crewList[3])"
+          [ngClass]="{ active: selectedCrewmate === crewList[3] }"
+        ></li>
+      </ul>
+    </div>
+    <div class="crew-img">
+      <img [src]="crewmate?.images?.png" [alt]="crewmate?.name" />
+    </div>
+  </div>
+</section>
+<div class="crew-background"></div>

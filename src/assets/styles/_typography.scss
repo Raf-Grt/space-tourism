@@ -1,0 +1,71 @@
+/*========== Typography base & responsive ==========*/
+
+@mixin typography(
+  $font-family,
+  $font-size,
+  $letter-spacing: normal,
+  $color: var(--text-light),
+  $weight: 400
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  color: $color;
+  font-weight: $weight;
+}
+
+.heading1 {
+  @include typography(var(--heading-font), var(--heading1-font-size));
+}
+
+.heading2 {
+  @include typography(var(--heading-font), var(--heading2-font-size));
+}
+
+.heading3 {
+  @include typography(var(--heading-font), var(--heading3-font-size));
+}
+
+.heading4 {
+  @include typography(var(--heading-font), var(--heading4-font-size));
+}
+
+.heading5 {
+  @include typography(
+    var(--body-font),
+    var(--heading5-font-size),
+    0.3rem,
+    var(--text-dark),
+    300
+  );
+}
+
+.subheading1 {
+  @include typography(var(--heading-font), var(--subheading1-font-size));
+}
+
+.subheading2 {
+  @include typography(var(--body-font), var(--subheading2-font-size), 0.15rem);
+}
+
+.nav-text {
+  @include typography(var(--body-font), var(--nav-font-size), 0.17rem);
+}
+
+.description {
+  @include typography(
+    var(--body-font),
+    var(--body-font-size),
+    $color: var(--text-dark)
+  );
+  line-height: clamp(1.56rem, 3.2vw, 2rem);
+}
+
+.btn-primary {
+  @include typography(
+    var(--heading-font),
+    var(--heading5-font-size),
+    2px,
+    var(--primary)
+  );
+}
